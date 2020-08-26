@@ -4,29 +4,29 @@
 Here I am going through TypeScript in detail building projects along the way.
 
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## The repo will consists of the following folders and areas:
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 ## React Native 
 
 
-    #### (Ongoing) CourseGoalsAPP (Goal: Using Context API and TypeScript with React Native + Simple TODO APP)
+    #### (Ongoing) GoalsApp (Goal: Using Context API and TypeScript with React Native + Simple TODO APP)
     
     A very barebone Todoproject including a ToastModule functionality built in TypeScript for learning purposes.
 
   
+  &nbsp;&nbsp;
   
-  
-    #### TODO A React Native Meals APP (Goal: Using TypeScript + React Navigation + REDUX.) 
+    #### TODO A React Native Movies APP (Goal: Using TypeScript + React Navigation + REDUX.) 
      
-    An app including drawerNavigator and routing giving overview of recipes for different meals. 
+    An app including drawerNavigator and routing giving overview of recipes for different movies. 
 
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 ## ReactVanilla 
@@ -40,15 +40,14 @@ Here I am going through TypeScript in detail building projects along the way.
 
       This example showcases usage of context api, and default props and working with partials. built in TypeScript for learning purposes.
       
-
+&nbsp;&nbsp;
 
    
   #### TODO  Simple VanillaReactTSGoogleMapsApp infused React Project (Goal: Using TS with React)
   
         ******** NOTES *********
 
-
-
+&nbsp;&nbsp;
  
 
   #### TODO A Simple VanillaReactTSTodoAPP made in React with TypeScript (Goal: Using TS with React)
@@ -56,7 +55,7 @@ Here I am going through TypeScript in detail building projects along the way.
         ******** NOTES *********
        
        
-       
+&nbsp;&nbsp;       
        
         
   ####  TODO A Simple VanillaReactTSLogging app (Goal: Using TS with React)
@@ -65,7 +64,7 @@ Here I am going through TypeScript in detail building projects along the way.
         
         
         
-        
+&nbsp;&nbsp;&nbsp;&nbsp;        
         
       
 
@@ -74,19 +73,19 @@ Here I am going through TypeScript in detail building projects along the way.
       A sample Express API using Ts 
       
      
-      
+&nbsp;&nbsp;&nbsp;&nbsp;      
       
 ## TODO Using TS with styles and CSS
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;
      
 ## TODO Using TS with children
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## TODO Using TS with events
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## TODO using TS RenderProps and HOC
 
