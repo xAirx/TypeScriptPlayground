@@ -82,7 +82,7 @@
 			"avoid-escape"
 		],
 		"no-use-before-define": [
-			2,
+			1,
 			{
 				"functions": false
 			}
@@ -94,7 +94,7 @@
 		"prefer-const": 1,
 		"react/prefer-es6-class": 0,
 		"react/prop-types": [
-			1
+			0
 		],
 		"react/no-array-index-key": [
 			1
