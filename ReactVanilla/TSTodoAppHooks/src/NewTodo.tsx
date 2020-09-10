@@ -32,7 +32,7 @@ const NewTodo: React.FC<NewTodoProps> = props => {
 
 		const enteredText = textInputRef.current!.value;
 		console.log(enteredText);
-		props.onAddTodo(2, enteredText);
+		props.onAddTodo(Math.random(), enteredText);
 		// Using useRef to get data back from the input field.
 	};
 
