@@ -3,10 +3,10 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 import TodoList from './TodoList';
 import NewTodo from './NewTodo';
 import { Todo } from './todo.model';
-import { Route} from 'react-router-dom';
 
 const App: React.FC = () => {
 	/* 	const todosArray = [{ id: 3, enteredText: 'Finish the course' }];
