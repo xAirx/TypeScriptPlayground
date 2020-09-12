@@ -1,8 +1,10 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { useState } from 'react';
 import './App.css';
 import { TodoList } from './TodoList';
-import { Todo } from './todo';
-
+/* import { Todo } from './todo';
+ */
 // we need a d.ts for types
 
 // We need a todo type that teks a string and a number and completed boolean
@@ -15,12 +17,12 @@ import { Todo } from './todo';
 
 interface Todos {
 	id: number;
-	text?: string;
-	completed?: boolean;
+	text: string;
+	completed: boolean;
 }
 
-const App: React.FC<Todo> = () => {
-	const initialTodos = [{ id: Math.random(), text: 'testtodo', completed: true }];
+const App: React.FC = () => {
+	const initialTodos = [{ id: 1, text: 'testtodo', completed: true }];
 
 	/// //// USESTATE ///////
 
@@ -44,16 +46,18 @@ const App: React.FC<Todo> = () => {
 	so  todoId: number, text:string
 	 */
 
-	const addTodoHandler = (id: number, text: string, completed: boolean) => {
+	const addTodoHandler = (text: string, completed: boolean) => {
 		/* const updatedTodos = (prevTodos) => [...prevTodos, { id: id, text: text, completed: completed }]; */
-/* 		console.log("these are our new updated todos", updatedTodos);
+		/* 		console.log("these are our new updated todos", updatedTodos);
 
-	///////// LOGIC //////
-	//compare prev and new "props" with "prevTodo"
-	// Grab old array with prevTodo "PrevProps" function from es6
-	// add with spread operator and destructuring, remember to , add new Todos.
+			///////// LOGIC //////
+			//compare prev and new "props" with "prevTodo"
+			// Grab old array with prevTodo "PrevProps" function from es6
+			// add with spread operator and destructuring, remember to , add new Todos.
 
- */		setNewTodos(prevTodos => [...prevTodos, { id, text, completed }]);
+		 */
+		const generateId = Math.random();
+		setNewTodos(prevTodos => [...prevTodos, { id: generateId, text, completed }]);
 	};
 
 	/// / DELETE FUNCITONALITY /////
@@ -64,7 +68,10 @@ const App: React.FC<Todo> = () => {
 	/// ////// LOGIC //////
 
 	const deleteTodoHandler = (id: number) => {
-		setNewTodos(prevTodos => prevTodos.filter(id => id !== id));
+		const updatedTodos = todos.filter(todo => todo.id !== id);
+		console.log(updatedTodos);
+		// call setTodos with new todosArray
+		setNewTodos(updatedTodos);
 	};
 
 	/// / Update FUNCITONALITY /////
@@ -74,7 +81,10 @@ const App: React.FC<Todo> = () => {
 	 */
 
 	const updateTodoHandler = (id: number, text: string) => {
-		setNewTodos(prevTodos => [...prevTodos, { id, text }]);
+		const updatedTodos = todos.map(todo => (todo.id === id
+			? { ...todo, text } : todo));
+		console.log('this is the new todos changed from edit', updatedTodos);
+		setNewTodos(updatedTodos);
 	};
 
 	// remember that the function needs the Todo type applied as generic
@@ -95,7 +105,11 @@ const App: React.FC<Todo> = () => {
 	 */
 
 	const checkTodoHandler = (id: number, completed: boolean) => {
-		setNewTodos(prevTodos => [...prevTodos, { id, completed }]);
+		const updatedTodos = todos.map(todo => (todo.id === id ? {
+			...todo,
+			completed: !completed,
+		} : todo));
+		setNewTodos(updatedTodos);
 	};
 
 	// remember that the function needs the Todo type applied as generic

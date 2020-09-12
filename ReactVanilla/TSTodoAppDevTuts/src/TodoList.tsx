@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // import react
 import React, { useState } from 'react';
 /* import { Todo } from './todo';
@@ -12,16 +14,16 @@ import React, { useState } from 'react';
 interface TodoListProps {
 	todos: {
 		id: number,
-		text?: string,
-		completed?: boolean
+		text: string,
+		completed: boolean
 	}[];
-	addTodoHandler: (id: number, text: string, completed: boolean) => void;
+	addTodoHandler: (text: string, completed: boolean) => void;
 	deleteTodoHandler: (id: number) => void;
 	updateTodoHandler: (id: number, text: string) => void;
 	checkTodoHandler: (id: number, completed: boolean) => void;
 }
 
-// add function component
+// add function componentxw
 
 export const TodoList: React.FC<TodoListProps> = props => {
 	const {
@@ -32,16 +34,16 @@ export const TodoList: React.FC<TodoListProps> = props => {
 	const [toggled, setToggle] = useState(Boolean);
 
 	const handleInput = (e: React.ChangeEvent) => {
-		const element = e.currentTarget as HTMLInputElement
-		const value = element.value
+		const element = e.currentTarget as HTMLInputElement;
+		const { value } = element;
 		setNewTodo(value);
 		/* addTodoHandler(todo); */
 	};
 
 	const handleToggle = (id: number, completed: boolean | undefined) => {
-		setToggle(completed !== true ? false : true);
+		setToggle(completed === true);
 		checkTodoHandler(id, toggled);
-	}
+	};
 
 	return (
 		// we want to return the todolist here passed in as props as a list
@@ -51,11 +53,11 @@ export const TodoList: React.FC<TodoListProps> = props => {
 				{todos.map(todo => (
 					<li key={todo.id}>
 						{todo.text}
-						<input onChange={() => { handleInput; }} placeholder="New Todo" />
-						<button onClick={() => { addTodoHandler(todo.id, newInput, toggled) }}> Add New Todo</button>
-						<input type="checkbox" onClick={() => { handleToggle(todo.id, todo.completed) }} checked={todo.completed} />
-						<button type="button" onClick={() => { deleteTodoHandler(todo.id) }}>DELETE</button>
-						<button type="button" onClick={() => { updateTodoHandler(todo.id, newInput) }}>UpdateTodo</button>
+						<input onChange={e => { handleInput(e); }} placeholder="New Todo" />
+						<button type="button" onClick={() => { addTodoHandler(newInput, toggled); }}> Add New Todo</button>
+						<input type="checkbox" onClick={() => { handleToggle(todo.id, todo.completed); }} checked={todo.completed} />
+						<button type="button" onClick={() => { deleteTodoHandler(todo.id); }}>DELETE</button>
+						<button type="button" onClick={() => { updateTodoHandler(todo.id, newInput); }}>UpdateTodo</button>
 					</li>
 				))}
 			</ul>
