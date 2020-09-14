@@ -48,7 +48,7 @@
 			}
 		],
 		"react/jsx-indent": [
-			2,
+			0,
 			"tab"
 		],
 		"react/jsx-indent-props": [
@@ -81,7 +81,7 @@
 			"avoid-escape"
 		],
 		"no-use-before-define": [
-			2,
+			1,
 			{
 				"functions": false
 			}
@@ -96,6 +96,9 @@
 			1
 		],
 		"react/no-array-index-key": [
+			1
+		],
+		"no-unused-vars": [
 			1
 		],
 		"class-methods-use-this": [

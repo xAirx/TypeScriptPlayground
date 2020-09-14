@@ -6,6 +6,38 @@ It is an array but it's a fixed length array and actually not just fixed length 
 Now where could this be handy.
  */
 
+/// /////////////////// /////////////////// ///////////////////
+/// /////////////////// /////////////////// ////////////////
+/// /////////////////// /////////////////// ////////////////
+/// //////////////// ANOTHER EXAMPLE //////////////////
+// Any of these types can be in any of these positions, arrays are quite flexible.
+let arr = ['ryu', 25, true];
+// eslint-disable-next-line computed-property-spacing
+arr[0] = false;
+// eslint-disable-next-line computed-property-spacing
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
+
+/* The difference between regular arrays and tuples are that once we define a type in a specific index, we cannot change them AudioBufferSourceNode.
+ */
+
+// we will define a tuple this way else it thinks its a regular array.
+const tup: [string, number, boolean] = ['ryu', 24, true]; // fine
+const tup2: [string, number, boolean] = [40, 24, true]; // ERROR
+// once each position has been defined as a type that position cant be anything else.
+tup[0] = 'ken';
+/* tup[1] = 'string'; // error */
+tup[1] = 24;
+
+let student: [string, number];
+student = ['chun-li', 22234];
+/* student = [123131321, 22234]; // ERROR
+ */
+
+/// /////////////////// /////////////////// ///////////////////
+/// /////////////////// /////////////////// ////////////////
+/// /////////////////// /////////////////// ////////////////
+
 const person3: {
 	name: string;
 	age: number;

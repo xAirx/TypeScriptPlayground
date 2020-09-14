@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 
 interface ProfileProps {
@@ -14,35 +12,55 @@ interface ProfileState {
 
 export default class Profile extends Component<ProfileProps, ProfileState> {
 	constructor(props: ProfileProps) {
-		super(props)
+		super(props);
 		this.state = {
-			publicStatus: false
+			publicStatus: false,
 		};
-
 	}
 
 	changeStatus = () => {
 		this.setState({
-			publicStatus: (!this.state.publicStatus)
+			publicStatus: !this.grabState(),
 		});
-	}
+	};
+
+	grabState = () => {
+		const { publicStatus } = this.state;
+		const state = { publicStatus };
+		return state;
+	};
 
 	render() {
+		const {
+			publicStatus,
+		} = this.state;
+
+		const { username, name, age } = this.props;
+
 		return (
 			<div>
 
 				{
-					this.state.publicStatus ? (
+					publicStatus ? (
 						<h1>This Profile is Public </h1>
 					) : (
 							<h1>This Profile is Private </h1>
 						)
 				}
-				<p> Name: {this.props.name}</p>
-				<p> Username: {this.props.username}</p>
-				<p> Age: {this.props.age}</p>
-				<button onClick={this.changeStatus}> Set Status </button>
+				<p>
+					Name:
+					{name}
+				</p>
+				<p>
+					Username:
+					{username}
+				</p>
+				<p>
+					Age:
+					{age}
+				</p>
+				<button type="button" onClick={this.changeStatus}> Set Status </button>
 			</div>
-		)
+		);
 	}
 }
